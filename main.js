@@ -46,3 +46,37 @@ function findInvalidCards(batch) {
     return invalidCards;
 };
 
+
+
+function idInvalidCardCompanies(cardNum) {
+    let invalidCards = findInvalidCards(cardNum);
+    let companies = [];
+    for (let i of invalidCards) {
+        if(i[0] === 3) {
+            companies.push('Amex');
+        }
+        else if (i[0] === 4) {
+            companies.push('Visa');
+        }
+        else if (i[0] === 5) {
+            companies.push('Mastercard');
+        }
+        else if (i[0] === 6) {
+            companies.push('Discover');
+        }
+        else {
+            companies.push('Company not found');
+        }
+        
+        return companies;
+      }
+
+      let allInvalidCards = companies.filter((card, index) => {
+        return companies.indexOf(card) === index;
+      })
+
+      return console.log(allInvalidCards.sort());
+      
+}
+
+
