@@ -34,9 +34,15 @@ function validateCred(arr) {
         sum += num;
     });
     return sum % 10 === 0; 
-}(valid1);
+}
 
-
-
-
+function findInvalidCards(batch) {
+    const invalidCards = [];
+    for (let card of batch) {
+        if (!validateCred(card)) {
+            invalidCards.push(card);
+        }
+    }
+    return invalidCards;
+};
 
